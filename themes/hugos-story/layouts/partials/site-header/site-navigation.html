@@ -1,0 +1,11 @@
+<nav role="navigation">
+  <ul>
+    <li><a class="nav-home-link" href="{{.Site.BaseURL}}"><i class="fa fa-home" aria-hidden="true"></i></a></li>
+    {{if not .IsHome}}<i class="fa fa-chevron-right" aria-hidden="true"></i>
+    <li><a href="{{.Site.BaseURL}}{{ .Data.Plural | urlize}}">{{.Data.Plural}}</a></li>
+    {{if ne .Title "categories"}}<i class="fa fa-chevron-right" aria-hidden="true"></i>
+    <li>{{.Title}}</li>
+    {{end}}
+    {{end}}
+  </ul>
+</nav>

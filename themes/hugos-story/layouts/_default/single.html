@@ -1,0 +1,78 @@
+{{define "main"}}
+{{$baseurl := .Site.BaseURL}}
+<body class="single">
+  <div class="fh5co-loader"></div>
+  <div id="page">
+    <div id="fh5co-aside" style="background-image: url({{.Site.BaseURL}}assets/images/{{.Params.image}})" data-stellar-background-ratio="0.5">
+      <div class="overlay"></div>
+      <nav role="navigation">
+        <ul>
+          <li><a href="{{.Site.BaseURL}}"><i class="fa fa-home" aria-hidden="true"></i></a></li>
+        </ul>
+      </nav>
+      <div class="page-title">
+        <div class="circle-author-image" {{with .Params.author}}style="background-image:url({{$baseurl }}assets/images/_thumb/{{. |urlize }}.jpg);"{{end}}>
+        </div>
+        <span class="publish-date-single-page">{{.PublishDate.Format "January 2, 2006"}}</span>
+        <h1 class="title title-single-page">{{.Title}}</h1>
+        <div class="title-meta-single-page">
+        {{with .Params.subtitle }}
+        <span class="subtitle-single-page">{{.}}</span>
+        {{end}}
+        {{if .Params.categories}}
+        <span class="categories-block-single-page">Posted in {{range $index, $value := .Params.categories}}{{if gt $index 0}}, {{end}}<a href="{{$baseurl }}categories/{{$value | urlize}}">{{.}}</a>{{end}}</span>
+        {{end}}
+        </div>
+      </div>
+    </div>
+    <div id="fh5co-main-content">
+      <div class="fh5co-post">
+        <div class="fh5co-entry padding">
+          <div class="body-copy">
+            {{.Content}}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="fh5co-navigation">
+    {{with .PrevInSection}}
+    <div class="fh5co-cover prev fh5co-cover-sm" style="background-image: url({{.Site.BaseURL}}assets/images/{{.Params.image}})">
+      <div class="overlay"></div>
+      <a class="copy" href="{{.Permalink}}">
+        <div class="display-t">
+          <div class="display-tc">
+            <div>
+              <span>Previous Post</span>
+              <h2>{{.Title}}</h2>
+              <span class="publish-date-next-prev">{{.PublishDate.Format "January 2, 2006"}}</span>
+            </div>
+          </div>
+        </div>
+      </a>
+    </div>
+    {{end}}
+    {{with .NextInSection}}
+    <div class="fh5co-cover next fh5co-cover-sm" style="background-image: url({{.Site.BaseURL}}assets/images/{{.Params.image}})">
+      <div class="overlay"></div>
+      <a class="copy" href="{{.Permalink}}">
+        <div class="display-t">
+          <div class="display-tc">
+            <div>
+              <span>Next Post</span>
+              <h2>{{.Title}}</h2>
+              <span class="publish-date-next-prev">{{.PublishDate.Format "January 2, 2006"}}</span>
+            </div>
+          </div>
+        </div>
+      </a>
+    </div>
+    {{end}}
+  </div>
+  {{partial "site-footer/site-footer.html" . }}
+  <div class="gototop js-top">
+    <a href="#" class="js-gotop"><i class="fa fa-arrow-up" aria-hidden="true"></i></a>
+  </div>
+  {{partial "site-scripts.html" . }}
+</body>
+{{end}}

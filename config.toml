@@ -1,0 +1,91 @@
+archetypedir = "archetypes"
+baseurl = ""
+buildDrafts = false
+buildFuture = false
+canonifyurls = true
+# Pointing to this file
+config = "config.toml"
+contentdir = "content"
+# Copyright year is auto-generated (see layouts/partials/site_footer/site_copyright.html). Use the following to change the text *after* the copyright year. If you want to stop auto-generation of copyright year, change
+copyright = "Your config copyright line"
+# Set to true is you don't want livereload in local development
+disableLiveReload= false
+# Set to false if you want rss xml files auto-generated
+disableRSS = false
+# Set to false if you want a sitemap.xml created at the site root
+disableSitemap = false
+# Set the unicode character used for the "return" link in page footnotes.
+footnotereturnlinkcontents = "↩"
+# Create an array of files you don't want hugo to build
+ignoreFiles = []
+languageCode = "en-us"
+# Point the generator to the folder used for layouts and templating
+layoutDir = "layouts"
+# Enable Logging
+log = true
+# This accepts yaml, toml, or json
+metaDataFormat = "yaml"
+# This intelligently adds an "s" to the titles of list pages
+pluralizelisttitles = false
+preserveTaxonomyNames = true
+# This sets the title of the directory where hugo builds and pushes the final site when running "Hugo" (ie, without "server")
+publishdir = "public"
+pygmentsUseClasses = true
+relativeURLs = true
+source = ""
+theme = "hugos-story"
+# This is the top-level, global site title
+title = "Your Site Title"
+# Set to true to convert mysite/section/ to mysite/section.html
+uglyURLs = false
+verbose = false
+verboseLog = false
+# Setting this to false will keep hugo from watching for changes during local development
+watch = true
+
+[permalinks]
+  posts = "/:title/"
+
+#CUSTOM PARAMS
+[params]
+  sitesubtitle = ""
+  # These keywords will be added whenever "keywords: XXXX" are not available in a single content item
+  sitekeywords = "your,default,keywords,for,this,site"
+  ## organizationname is needed for structured data for SEO (ie, json+ld); see layouts/partials/
+	organizationname = "Your Organization Name"
+  ## Only CopyrightYear if auto-generated year based on last publish date is no longer working
+  copyrightyear = ""
+  sitedescription = "The default description of your site set in config.toml"
+  ## Add GA Tracking Code Here. This leverages a built-in (ie, "internal") partial from HUGO: https://gohugo.io/extras/analytics#configuring-google-analytics
+  googleanalyticstrackingcode = ""
+  ## Twitter handle without the "@"
+  twitterhandle = "yourtwitterhandle"
+  ## Facebook URL
+  facebook = "https://www.facebook.com/example/"
+
+  ## Default Image for Social Sharing. This image should live at static/images/; be sure to size this to at least 1200px wide and optimize it.
+  defaultsocialimage = "your-default-social-image.jpg"
+  ## Site Notifications - set to true and add title (required) and body copy
+  addsitenotification = true
+  ## Short bio description on homepage list (note: accepts markdown)
+  sidebarbioheading = "Bio"
+  sidebarbio = "Sidebar bio and defaultsidebarimage set in config"
+  sidebardefaultimage = "default-sidebar-image.jpg"
+  ## Setting this to true will add a "noindex" to *EVERY* page on the site
+  removefromexternalsearch = true
+  ## Set to true to include a CDN call to FontAwesome; NOTE: this can also be set to "true" in _variables.scss and unhighlighted in styles.scss if you are comfortable using gulp-sass.
+  usefontawesome = true
+  ## Beging Homepage Variables
+  [params.homepage]
+    teamrowtitle = "Our Team"
+
+## Configuration for BlackFriday
+[blackfriday]
+	plainIDAnchors = true
+	hrefTargetBlank = true
+  angledQuotes = false
+  latexDashes = true
+
+[taxonomies]
+  tag = "tags"
+  category = "categories"

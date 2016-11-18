@@ -1,0 +1,13 @@
+<div id="fh5co-aside" style="background-image: url({{.Site.BaseURL}}assets/images/{{.Site.Params.sidebardefaultimage}})">
+  <div class="overlay"></div>
+  {{partial "site-header/site-navigation.html" . }}
+  <div class="featured fadeInLeft animated">
+    <span class="sidebar-heading">{{.Site.Params.sidebarbioheading}}</span>
+    <h2>{{.Site.Params.sidebarbio | markdownify}}</h2>
+  </div>
+  {{if not .IsPage}}
+  <div class="bounce">
+
+  </div>
+  {{end}}
+</div>

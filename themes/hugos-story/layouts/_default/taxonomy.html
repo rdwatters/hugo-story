@@ -1,0 +1,37 @@
+{{define "main"}}
+{{$baseurl := .Site.BaseURL}}
+<body>
+  <div class="fh5co-loader"></div>
+<div id="page">
+  <div id="fh5co-aside" style="background-image: url(images/image_1.jpg)">
+    <div class="overlay"></div>
+    {{partial "site-header/site-navigation.html" . }}
+    <div class="featured">
+      <span>{{.Site.Params.sidebarbioheading}}</span>
+      <h2>{{.Site.Params.sidebarbio | markdownify}}</h2>
+    </div>
+  </div>
+  <div id="fh5co-main-content">
+    <div class="fh5co-post">
+    	{{range .Data.Pages}}
+      <div class="fh5co-entry padding">
+        <div class="circle-list-image-wrapper" {{with .Params.image}}style="background-image:url({{$baseurl}}assets/images/_thumb/{{.}})";{{end}}>
+          <!-- <img src="{{.Site.BaseURL}}assets/images/_thumb/{{.Params.image}}" alt="{{.Params.imagealt}}"> -->
+        </div>
+        <div>
+          <span class="fh5co-post-date">{{.PublishDate.Format "January 2, 2006"}}</span>
+          <h2><a href="{{.Permalink}}">{{.Title}}</a></h2>
+          <p class="list-description">{{.Description}}</p>
+        </div>
+      </div>
+      {{end}}
+      {{partial "site-footer/site-footer.html" . }}
+    </div>
+  </div>
+</div>
+<div class="gototop js-top">
+    <a href="#" class="js-gotop"><i class="fa fa-arrow-up" aria-hidden="true"></i></a>
+  </div>
+  {{- partial "site-scripts.html" . -}}
+</body>
+{{end}}
