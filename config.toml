@@ -1,5 +1,6 @@
 archetypedir = "archetypes"
-baseurl = "https://hugos-story.netlify.com"
+#Include the full url with the ending slash
+baseurl = "https://hugos-story.netlify.com/"
 buildDrafts = false
 buildFuture = false
 canonifyurls = true
