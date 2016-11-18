@@ -285,6 +285,7 @@ figure {
   .next {
     transition: all .5s ease-in-out;
     text-align: left;
+    float:right!important;
     &:hover {
       padding-left: 30px;
     }
@@ -953,7 +954,7 @@ h1.title.title-single-page {
   img:hover {
     cursor: zoom-in;
   }
-  img[src$="svg" {
+  img[src$=".svg"] {
     cursor:pointer;
   }
   figcaption {
