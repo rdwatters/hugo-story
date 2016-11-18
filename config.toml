@@ -1,5 +1,5 @@
 archetypedir = "archetypes"
-baseurl = ""
+baseurl = "/"
 buildDrafts = false
 buildFuture = false
 canonifyurls = true
