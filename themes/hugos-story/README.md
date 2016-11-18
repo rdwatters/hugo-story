@@ -1,3 +1,30 @@
+# Hugo Story Theme
+
+Originally ported from [freehtml5.co's Story theme][].
+
+A sample of the site can be found at <https://hugos-story.netlify.com>.
+
+## Features
+
+In additional to the style of the original theme, the following features have been added:
+
+* Disqus comments
+* [Featherlight image modal][]
+* Partials for improved SEO
+* Copyable code blocks via [clipboard.js][]
+* Taxonomies and taxonomy pages (ie, tags and categories)
+* "Share" button that can be customized in your config file
+* A Gulp-based assets pipeline, including image resizing
+  * From within your root directory&mdash;after installing the theme&mdash; run `cd themes/hugos-story/pipeline && npm install && gulp`*
+  * When running `gulp`, images dropped into `hugos-story/source-images` will automatically be resized, optimized and added to the appropriate folders inside of `static/assets/images`.
+
+> * **NOTE:** While I have included the Gulp asset pipeline in this theme, I *do not plan on supporting this part of theme.* YMMV. If you are unfamiliar with Gulp, I suggest you check out the [official Gulp docs].
+
+## Configuration
+
+The following is the full `config.toml` you should use for the theme:
+
+```
 archetypedir = "archetypes"
 baseurl = "/"
 buildDrafts = false
@@ -55,7 +82,7 @@ watch = true
   # These keywords will be added whenever "keywords: XXXX" are not available in a single content item
   sitekeywords = "your,default,keywords,for,this,site"
   ## organizationname is needed for structured data for SEO (ie, json+ld); see layouts/partials/
-	organizationname = "Your Organization Name"
+  organizationname = "Your Organization Name"
   ## Only CopyrightYear if auto-generated year based on last publish date is no longer working
   copyrightyear = ""
   sitedescription = "The default description of your site set in config.toml"
@@ -85,11 +112,24 @@ watch = true
 
 ## Configuration for BlackFriday
 [blackfriday]
-	plainIDAnchors = true
-	hrefTargetBlank = true
+  plainIDAnchors = true
+  hrefTargetBlank = true
   angledQuotes = false
   latexDashes = true
 
 [taxonomies]
   tag = "tags"
   category = "categories"
+```
+
+## Customizations
+
+You can add custom design/style assets by creating new stylesheets.
+
+
+
+
+[clipboard.js]: https://clipboardjs.com/
+[Featherlight image modal]: http://noelboss.github.io/featherlight/
+[freehtml5.co's Story theme]: https://freehtml5.co/story-free-html5-bootstrap-template-for-personal-blog-websites/
+[official Gulp docs]: http://gulpjs.com/

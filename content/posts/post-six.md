@@ -6,6 +6,7 @@ publishdate: 2016-10-06
 image: coffee-cup-nightstand.jpg
 author: John Doe
 categories: [journal]
+removecomments: true
 description: Here is the description for this post.
 ---
 

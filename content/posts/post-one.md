@@ -6,6 +6,7 @@ publishdate: 2016-10-01
 image: colored-pencils.jpg
 author: John Doe
 categories: [web development]
+removecomments: false
 description: Here is the description for this post.
 ---
 

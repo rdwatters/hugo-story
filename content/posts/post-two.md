@@ -6,6 +6,7 @@ publishdate: 2016-10-02
 image: chicago-skyline-night.jpg
 author: John Doe
 categories: [journal]
+removecomments: false
 description: Here is the description for this post.
 ---
 

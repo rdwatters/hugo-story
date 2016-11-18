@@ -5,17 +5,17 @@ name = "Story"
 license = "MIT"
 licenselink = "https://github.com/yourname/yourtheme/blob/master/LICENSE.md"
 description = ""
-homepage = "http://siteforthistheme.com/"
-tags = ["", ""]
-features = ["", ""]
+homepage = "https://hugos-story.netlify.com/"
+tags = ["blog", "story", "single column", "minimal"]
+features = ["Disqus", "code blocks", "taxonomies"]
 min_version = 0.17
 
 [author]
-  name = ""
-  homepage = ""
+  name = "Ryan Watters"
+  homepage = "https://ryanwatters.io"
 
 # If porting an existing theme
 [original]
-  name = ""
-  homepage = ""
+  name = "Story from freehtml5.co"
+  homepage = "https://freehtml5.co/story-free-html5-bootstrap-template-for-personal-blog-websites/"
   repo = ""

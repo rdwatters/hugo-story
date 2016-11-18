@@ -6,7 +6,9 @@ publishdate: 2016-10-07
 image: lighthouse.jpg
 categories: [web development]
 author: John Doe
+tags: [one,two,three]
 categories: [web development]
+removecomments: false
 description: Here is the description for this post.
 ---
 

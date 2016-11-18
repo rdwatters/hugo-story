@@ -6,6 +6,7 @@ publishdate: 2016-10-05
 image: macbook.jpg
 author: John Doe
 categories: [web development]
+removecomments: false
 description: Here is the description for this post.
 ---
 

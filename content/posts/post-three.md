@@ -7,6 +7,7 @@ image: train-in-mountains.jpg
 author: John Doe
 categories: [web development,politics]
 categories: [web development]
+removecomments: false
 description: Here is the description for this post.
 ---
 

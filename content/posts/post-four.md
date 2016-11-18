@@ -6,6 +6,7 @@ publishdate: 2016-10-04
 image: tea-kettle.jpg
 author: John Doe
 categories: [journal]
+removecomments: false
 description: Here is the description for this post.
 ---
 

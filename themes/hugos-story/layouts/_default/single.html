@@ -22,6 +22,9 @@
         {{if .Params.categories}}
         <span class="categories-block-single-page">Posted in {{range $index, $value := .Params.categories}}{{if gt $index 0}}, {{end}}<a href="{{$baseurl }}categories/{{$value | urlize}}">{{.}}</a>{{end}}</span>
         {{end}}
+        {{ if .Params.tags }}
+        <span class="tags-block-single-page">&bull; <i class="fa fa-tags" aria-hidden="true"></i>{{range .Params.tags}} <a href="{{$baseurl}}tags/{{ . | urlize }}">{{.}}</a>{{end}} </span>
+        {{ end }}
         </div>
       </div>
     </div>
@@ -30,6 +33,7 @@
         <div class="fh5co-entry padding">
           <div class="body-copy">
             {{.Content}}
+            {{partial "disqus_comments.html" . }}
           </div>
         </div>
       </div>

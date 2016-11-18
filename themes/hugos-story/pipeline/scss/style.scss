@@ -982,6 +982,9 @@ h1.title.title-single-page {
 .title-meta-single-page {
   color: $white;
   font-weight: 300;
+  a {
+    color:$white;
+  }
   .subtitle-single-page {
     font-size: 1.2em;
     line-height:1.3;
@@ -993,6 +996,7 @@ h1.title.title-single-page {
     }
   }
   .categories-block-single-page {
+    display:inline-block;
     @include center;
     font-size: 1em;
     a {
