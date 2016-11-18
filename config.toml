@@ -1,5 +1,5 @@
 archetypedir = "archetypes"
-baseurl = "/"
+baseurl = "https://hugos-story.netlify.com"
 buildDrafts = false
 buildFuture = false
 canonifyurls = true
