@@ -10,6 +10,7 @@
 @import 'code';
 @import 'bootstrap';
 @import 'featherlight';
+@import 'social-media-share-overlay';
 
 /* =======================================================
 *
@@ -275,6 +276,9 @@ figure {
 
 .fh5co-navigation {
   margin-bottom: 80px;
+  display: block;
+  clear: both;
+  position: relative;
   .prev {
     transition: all .5s ease-in-out;
     text-align: right;
@@ -285,7 +289,7 @@ figure {
   .next {
     transition: all .5s ease-in-out;
     text-align: left;
-    float:right!important;
+    float: right!important;
     &:hover {
       padding-left: 30px;
     }
@@ -371,16 +375,20 @@ figure {
     z-index: 10;
     background: rgba(0, 0, 0, .5);
   }
+  .featured {
+    margin-bottom: 2.5em;
+  }
   .featured,
   nav,
   .page-title {
+    margin: 0 auto 4em auto;
     z-index: 12;
     position: absolute;
     bottom: 0;
     padding: 30px;
     .single & {
       width: 100%;
-      margin: 0 auto;
+      margin: 0 auto 2em auto;
       text-align: center;
     }
     h2 {
@@ -446,6 +454,20 @@ figure {
       }
     }
   }
+  &.taxonomy-aside {
+    max-height:200px;
+    .featured {
+      display:none;
+    }
+    @include MQ(M){
+      max-height:100vh;
+      height:100%;
+      height:100vh;
+      .featured {
+        display:block;
+      }
+    }
+  }
 }
 
 .sidebar-heading {
@@ -469,6 +491,9 @@ footer {
 #fh5co-main-content {
   margin-left: 38.1966%;
   position: relative;
+  display: block;
+  clear: both;
+  min-height: 100%;
   z-index: 999;
   .single & {
     margin-left: 0;
@@ -497,7 +522,6 @@ footer {
 }
 
 .fh5co-post {
-  height: 100vh;
   min-height: 100vh;
   .fh5co-entry {
     float: left;
@@ -955,7 +979,7 @@ h1.title.title-single-page {
     cursor: zoom-in;
   }
   img[src$=".svg"] {
-    cursor:pointer;
+    cursor: pointer;
   }
   figcaption {
     text-align: center;
@@ -983,11 +1007,11 @@ h1.title.title-single-page {
   color: $white;
   font-weight: 300;
   a {
-    color:$white;
+    color: $white;
   }
   .subtitle-single-page {
     font-size: 1.2em;
-    line-height:1.3;
+    line-height: 1.3;
     @include MQ(M) {
       font-size: 1.5em;
     }
@@ -996,13 +1020,31 @@ h1.title.title-single-page {
     }
   }
   .categories-block-single-page {
-    display:inline-block;
+    display: inline-block;
     @include center;
     font-size: 1em;
-    a {
+    a.category {
       font-weight: 600;
-      color: $white!important;
+      color: $white;
       text-decoration: underline;
+      &:hover {
+        color:$brand-primary;
+      }
+    }
+  }
+  .tags-block-single-page {
+    display: block;
+    margin-top: .75em;
+    a.tag {
+      transition: .3s all ease-in-out;
+      padding: .05em .2em;
+      border: 1px solid $white;
+      &:hover {
+        transition: .3s all ease-in-out;
+        background-color: $brand-primary;
+        border-color: $brand-primary;
+        color: $white;
+      }
     }
   }
 }
@@ -1021,12 +1063,14 @@ span.publish-date-single-page {
 }
 
 #site-footer {
-  display: inline-block;
+  // display: inline-block;
+  align-self: flex-end;
   position: relative;
   bottom: 0px;
   width: 100%;
   background-color: $site-footer-bg-color;
   z-index: 999;
+  margin-top: auto;
 }
 
 body.single {
@@ -1039,4 +1083,25 @@ body.single {
   > .fh5co-entry:last-child {
     margin-bottom: 80px;
   }
+}
+
+.terms-content {
+  margin-top: 2em;
+}
+
+ul.taxonomy-terms {
+  display: block;
+  min-height: calc(100vh - 60px);
+}
+
+.fh5co-post {
+  display: flex;
+  flex-direction: column;
+}
+
+div.disqus {
+  display: block;
+  height: auto;
+  clear: both;
+  position: relative;
 }

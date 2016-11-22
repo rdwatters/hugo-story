@@ -1,0 +1,31 @@
+{{define "main"}}
+{{$baseurl := .Site.BaseURL}}
+<body>
+
+<div id="page">
+  <div id="fh5co-aside" class="taxonomy-aside" style="background-image: url(images/image_1.jpg)">
+    <div class="overlay"></div>
+    {{partial "site-header/site-navigation.html" . }}
+    <div class="featured fadeInLeft animated">
+      <span>{{.Site.Params.sidebarbioheading}}</span>
+      <h2>{{.Site.Params.sidebarbio | markdownify}}</h2>
+    </div>
+  </div>
+  <div id="fh5co-main-content">
+    <div class="fh5co-post">
+      <div class="terms-content">
+      {{ $data := .Data }}
+      <ul class="taxonomy-terms">
+    	{{range $key,$value := .Data.Terms}}
+        <li class="taxonomy-term"><a href="{{$baseurl}}{{$data.Plural}}/{{$key | urlize}}">{{$key}} <span class="key-count">{{ len $value }}</span></a></li>
+      {{end}}
+      </ul>
+      </div>
+      {{partial "site-footer/site-footer.html" . }}
+    </div>
+  </div>
+</div>
+  {{- partial "go-to-top.html" . -}}
+  {{- partial "site-scripts.html" . -}}
+</body>
+{{end}}

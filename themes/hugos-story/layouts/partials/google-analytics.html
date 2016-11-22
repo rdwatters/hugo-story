@@ -1,7 +1,7 @@
 <script async>
 (function() {
   var localTest = new RegExp(/localhost/i);
-  if (localTest.test(indow.location.hostname)) {
+  if (localTest.test(window.location.hostname)) {
   	console.log("Development, so no Google Analytics!");
     return;
   } else {

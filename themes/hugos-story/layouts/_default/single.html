@@ -1,7 +1,7 @@
 {{define "main"}}
 {{$baseurl := .Site.BaseURL}}
 <body class="single">
-  <div class="fh5co-loader"></div>
+
   <div id="page">
     <div id="fh5co-aside" style="background-image: url({{.Site.BaseURL}}assets/images/{{.Params.image}})" data-stellar-background-ratio="0.5">
       <div class="overlay"></div>
@@ -10,7 +10,7 @@
           <li><a href="{{.Site.BaseURL}}"><i class="fa fa-home" aria-hidden="true"></i></a></li>
         </ul>
       </nav>
-      <div class="page-title">
+      <div class="page-title fadeIn animated">
         <div class="circle-author-image" {{with .Params.author}}style="background-image:url({{$baseurl }}assets/images/_thumb/{{. |urlize }}.jpg);"{{end}}>
         </div>
         <span class="publish-date-single-page">{{.PublishDate.Format "January 2, 2006"}}</span>
@@ -20,10 +20,10 @@
         <span class="subtitle-single-page">{{.}}</span>
         {{end}}
         {{if .Params.categories}}
-        <span class="categories-block-single-page">Posted in {{range $index, $value := .Params.categories}}{{if gt $index 0}}, {{end}}<a href="{{$baseurl }}categories/{{$value | urlize}}">{{.}}</a>{{end}}</span>
+        <span class="categories-block-single-page">Posted in {{range $index, $value := .Params.categories}}{{if gt $index 0}}, {{end}}<a class="category" href="{{$baseurl }}categories/{{$value | urlize}}">{{.}}</a>{{end}}</span>
         {{end}}
         {{ if .Params.tags }}
-        <span class="tags-block-single-page">&bull; <i class="fa fa-tags" aria-hidden="true"></i>{{range .Params.tags}} <a href="{{$baseurl}}tags/{{ . | urlize }}">{{.}}</a>{{end}} </span>
+        <span class="tags-block-single-page"><i class="fa fa-tags" aria-hidden="true"></i>{{range .Params.tags}} <a class="tag" href="{{$baseurl}}tags/{{ . | urlize }}">{{.}}</a>{{end}} </span>
         {{ end }}
         </div>
       </div>
@@ -73,10 +73,9 @@
     </div>
     {{end}}
   </div>
-  {{partial "site-footer/site-footer.html" . }}
-  <div class="gototop js-top">
-    <a href="#" class="js-gotop"><i class="fa fa-arrow-up" aria-hidden="true"></i></a>
-  </div>
-  {{partial "site-scripts.html" . }}
+  {{- partial "social-share.html" . -}}
+  {{- partial "go-to-top.html" . -}}
+  {{- partial "site-footer/site-footer.html" . -}}
+  {{- partial "site-scripts.html" . -}}
 </body>
 {{end}}

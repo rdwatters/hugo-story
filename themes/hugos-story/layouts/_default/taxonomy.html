@@ -1,12 +1,12 @@
 {{define "main"}}
 {{$baseurl := .Site.BaseURL}}
 <body>
-  <div class="fh5co-loader"></div>
+
 <div id="page">
-  <div id="fh5co-aside" style="background-image: url(images/image_1.jpg)">
+  <div id="fh5co-aside" class="taxonomy-aside" style="background-image: url(images/image_1.jpg)">
     <div class="overlay"></div>
     {{partial "site-header/site-navigation.html" . }}
-    <div class="featured">
+    <div class="featured fadeInLeft animated">
       <span>{{.Site.Params.sidebarbioheading}}</span>
       <h2>{{.Site.Params.sidebarbio | markdownify}}</h2>
     </div>
@@ -29,9 +29,7 @@
     </div>
   </div>
 </div>
-<div class="gototop js-top">
-    <a href="#" class="js-gotop"><i class="fa fa-arrow-up" aria-hidden="true"></i></a>
-  </div>
+  {{- partial "go-to-top.html" . -}}
   {{- partial "site-scripts.html" . -}}
 </body>
 {{end}}
